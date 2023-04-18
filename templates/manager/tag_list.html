@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-this is tags page
+this is tags page:
+  <br>
+  {% for tag in tag_list %}
+    {{ tag }}
+  {% endfor %}
 {% endblock %}
