@@ -2,4 +2,11 @@
 
 {% block content %}
 this is index page
+  <a href="{% url "manager:task-create" %}">Create task</a>
+  <br>
+  <a href="{% url "manager:tag-create" %}">Create tag</a>
+  <br>
+  {% for task in task_list %}
+    {{ task }}
+  {% endfor %}
 {% endblock %}
