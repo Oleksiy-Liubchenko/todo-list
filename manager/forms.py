@@ -1,5 +1,8 @@
 from django import forms
-from django.forms import DateTimeInput
+from django.forms import (
+    DateTimeInput,
+    CheckboxSelectMultiple
+)
 
 from manager.models import Task, Tag
 
@@ -10,6 +13,7 @@ class TaskCreationForm(forms.ModelForm):
         fields = ["content", "deadline", "tags"]
         widgets = {
             "deadline": DateTimeInput(attrs={"type": "datetime-local"}),
+            "tags": CheckboxSelectMultiple
         }
 
 
