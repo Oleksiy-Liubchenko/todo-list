@@ -9,6 +9,7 @@ from manager.models import Task, Tag
 class TaskListView(generic.ListView):
     model = Task
     template_name = "manager/index.html"
+    paginate_by = 5
 
 
 class TaskCreateView(generic.CreateView):
@@ -49,6 +50,7 @@ class TaskUpdateStatusView(View):
 class TagListView(generic.ListView):
     model = Tag
     template_name = "manager/tag_list.html"
+    paginate_by = 5
 
 
 class TagCreationView(generic.CreateView):
