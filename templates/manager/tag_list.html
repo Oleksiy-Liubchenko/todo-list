@@ -1,9 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-this is tags page:
-  <br>
-  {% for tag in tag_list %}
-    {{ tag }}
-  {% endfor %}
+  <div class="d-flex justify-content-between align-items-center" style="width: 50%">
+  <h1>Tags:</h1>
+  <a href="{% url 'manager:tag-create' %}" class="btn btn-primary">Add</a>
+</div>
+
+  <table class="table" style="width: 50%">
+    <tr>
+      <th>Name</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    {% for tag in tag_list %}
+    <tr>
+      <td>{{ tag }}</td>
+      <td>
+        <a href="{% url 'manager:tag-update' pk=tag.pk %}" class="btn btn-secondary">
+          Update
+        </a>
+      </td>
+      <td>
+        <a href="{% url 'manager:tag-delete' pk=tag.pk %}" class="btn btn-secondary">
+          Delete
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
 {% endblock %}
