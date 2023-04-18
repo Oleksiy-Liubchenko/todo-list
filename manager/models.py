@@ -17,3 +17,6 @@ class Task(models.Model):
 
     def __str__(self):
         return self.content
+
+    class Meta:
+        ordering = ["status", "-created_at"]
