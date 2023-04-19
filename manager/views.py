@@ -38,7 +38,7 @@ class TaskUpdateStatusView(View):
         task.status = not task.status
         task.save()
 
-        return redirect("manager:task-list")
+        return redirect("manager:tasks-list")
 
     def post(self, request, pk):
         task = get_object_or_404(Task, id=pk)
