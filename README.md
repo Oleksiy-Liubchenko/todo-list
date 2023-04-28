@@ -6,6 +6,11 @@ completed or undone, view their deadlines and creation dates,
 and categorize them using tags.
 
 You have the ability to create, update, and delete tasks and tags as needed, making this project a simple yet effective alternative to popular task management tools.
+## Check it out!
+
+[TODO deployed to Render](https://to-do-list-yv6c.onrender.com/)
+
+
 ## Installation
 
 1. Copy this repository, by using your terminal:
