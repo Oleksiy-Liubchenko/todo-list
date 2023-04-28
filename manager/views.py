@@ -33,13 +33,6 @@ class TaskUpdateView(generic.UpdateView):
 
 
 class TaskUpdateStatusView(View):
-    def get(self, request, pk):
-        task = get_object_or_404(Task, id=pk)
-        task.status = not task.status
-        task.save()
-
-        return redirect("manager:tasks-list")
-
     def post(self, request, pk):
         task = get_object_or_404(Task, id=pk)
         task.status = request.POST.get("status", not task.status)
